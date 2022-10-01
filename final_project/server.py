@@ -20,16 +20,7 @@ lt = LanguageTranslatorV3(
 )
 lt.set_service_url(url)
 
-#@app.route("/englishToFrench")
-#def englishToFrench():
-    # textToTranslate = request.args.get()
-    #if request.method == "POST":
-        #textToTranslate = request.form["text"]
-        #translator = lt.translate(
-            #text = textToTranslate,
-            #model_id = 'en-fr').get_result()
-       # french_text = json.dumps(translator, indent=2, ensure_ascii=False)
-    #return french_text
+
 
 @app.route("/englishToFrench", methods=['POST', 'GET'])
 def nglishToFrench():
@@ -52,11 +43,7 @@ def frenchToEnglish():
     english_text = json.dumps(translator, indent=2, ensure_ascii=False)
     return english_text
 
-@app.route("/login", methods=['POST', 'GET'])
-def login():
-    if request.method == 'POST':
-        text = request.form.get('text')
-    return render_template('index.html', text=text)
+
 
 
 @app.route("/", methods=['POST', 'GET'])
